@@ -1,12 +1,33 @@
-import { observable } from 'mobx';
+import {observable} from 'mobx';
+
+class User {
+  @observable name = 'patrick';
+}
+
+
+class ChatRoom {
+  @observable name;
+  id;
+
+  constructor(data) {
+    this.name = data.name;
+    this.id = data.id;
+  }
+}
 
 class AppState {
   @observable timer = 0;
+  horizon;
+  user = new User();
+  @observable chatRooms = [];
 
-  constructor() {
-    setInterval(() => {
-      this.timer += 1;
-    }, 1000);
+  constructor(horizon) {
+    this.horizon = horizon;
+    this.chatRooms = [];
+  }
+
+  setChatRoom(data) {
+    this.chatRooms = data.map((el) => new ChatRoom(el));
   }
 
   resetTimer() {
