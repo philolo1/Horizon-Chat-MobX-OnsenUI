@@ -36,9 +36,7 @@ export default class Page2 extends Component {
 
     this.messages.findAll({roomID: this.props.roomID}).watch().subscribe((data) => {
       if (data) {
-        this.setState({
-          messages: data
-        });
+        this.props.appState.setMessages(data);
       }
     });
 
@@ -61,12 +59,14 @@ export default class Page2 extends Component {
       message: this.state.typedText,
       roomID: this.props.roomID
     });
+
+    this.setState({typedText: ''});
   }
 
   render() {
     return (
       <Page renderToolbar={() => <Toolbar> <div className='center'> {this.props.title} </div> </Toolbar>}>
-        <List id='mesageList' style={{overflow: 'scroll', height: '80%'}} dataSource={this.state.messages}
+        <List id='mesageList' style={{overflow: 'scroll', height: '80%'}} dataSource={this.props.appState.messages}
           renderRow={this.renderRow}
         />
         <Input

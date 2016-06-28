@@ -26,6 +26,10 @@ class AppState {
     this.chatRooms = [];
   }
 
+  setMessages(data) {
+    this.messages = data;
+  }
+
   setChatRoom(data) {
     this.chatRooms = data.map((el) => new ChatRoom(el));
   }
