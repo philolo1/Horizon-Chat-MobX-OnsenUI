@@ -1,10 +1,5 @@
 import {observable} from 'mobx';
 
-class User {
-  @observable name = 'patrick';
-}
-
-
 class ChatRoom {
   @observable name;
   id;
@@ -15,11 +10,16 @@ class ChatRoom {
   }
 }
 
+
 class AppState {
   @observable timer = 0;
   horizon;
-  user = new User();
+  @observable userName;
+  @observable roomName;
   @observable chatRooms = [];
+  @observable loading = false;
+  @observable messages = [];
+
 
   constructor(horizon) {
     this.horizon = horizon;
