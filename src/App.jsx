@@ -3,7 +3,7 @@ import {observer} from 'mobx-react';
 import {observable} from 'mobx';
 import DevTools from 'mobx-react-devtools';
 import ons from 'onsenui';
-import {Modal, Page, List, ListItem, Button, Row, Col, Navigator, Toolbar, Input} from 'react-onsenui';
+import {Modal, Page, Col, Row, List, ListItem, Button, Navigator, Toolbar, Input} from 'react-onsenui';
 import _ from 'lodash';
 import Page2 from './Page2.jsx';
 
@@ -77,13 +77,27 @@ class Page1 extends Component {
     return (
       <Page
         renderModal={this.renderModal}
-        renderToolbar={this.renderToolbar}
       >
-        <div style={{padding: 60}}>
+        <div style={{paddingLeft: 60, paddingRight:60, paddingTop: 40}}>
+          <Row style={{paddingBottom: 20}}>
+            <Col />
+            <Col>
+              <img style={{width: 200}} src={require("../static/onsen_chat.png")} />
+            </Col>
+            <Col />
+          </Row>
           <UserInput appState={this.props.appState} />
           <RoomInput appState={this.props.appState} />
           <div style={{display: 'flex', justifyContent: 'center'}}>
-            <Button onClick={this.joinRoom} modifier='large' style={styles.loginButton}> Join </Button>
+
+            <Row style={{paddingBottom: 20}}>
+              <Col />
+              <Col style={{display: 'flex', justifyContent: 'center'}}>
+                <Button onClick={this.joinRoom} modifier='large' style={styles.loginButton}> Join </Button>
+              </Col>
+              <Col />
+            </Row>
+
           </div>
           <DevTools />
         </div>

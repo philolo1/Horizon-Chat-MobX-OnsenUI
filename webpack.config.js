@@ -27,6 +27,10 @@ module.exports = {
       include: path.join(__dirname, 'src')
     },
     {
+      test: /\.png?$/,
+      loader: 'file'
+    },
+    {
       test: /\.css$/,
       loader: 'style!css'
     }]
