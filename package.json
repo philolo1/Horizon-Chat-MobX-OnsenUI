@@ -46,7 +46,7 @@
     "onsenui": "^2.0.0-rc.14",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
-    "react-onsenui": "^0.6.0",
+    "react-onsenui": "^0.6.1",
     "style-loader": "^0.13.1"
   }
 }

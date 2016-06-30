@@ -3,9 +3,10 @@ import {observer} from 'mobx-react';
 import {observable} from 'mobx';
 import DevTools from 'mobx-react-devtools';
 import ons from 'onsenui';
-import {Modal, Page, Col, Row, List, ListItem, Button, Navigator, Toolbar, Input} from 'react-onsenui';
+import {Modal, Page, Col, Row, BottomToolbar, List, ListItem, Button, Navigator, Toolbar, Input} from 'react-onsenui';
 import _ from 'lodash';
 import Page2 from './Page2.jsx';
+import {Page2State} from './AppState.js'
 
 const UserInput = observer(({appState}) => {
   return (
@@ -72,13 +73,12 @@ class Page1 extends Component {
       </Toolbar>
     );
   }
-
   render() {
     return (
       <Page
         renderModal={this.renderModal}
       >
-        <div style={{paddingLeft: 60, paddingRight:60, paddingTop: 40}}>
+        <div style={{paddingLeft: 60, paddingRight: 60, paddingTop: 40}}>
           <Row style={{paddingBottom: 20}}>
             <Col />
             <Col>
@@ -99,7 +99,6 @@ class Page1 extends Component {
             </Row>
 
           </div>
-          <DevTools />
         </div>
       </Page>
     );
@@ -135,13 +134,15 @@ class Page1 extends Component {
         var el = this.chatRooms.store({
           name: roomName
         }).subscribe((el) => {
+
           this.props.navigator.pushPage({
             component: Page2,
             props: {
               appState: this.props.appState,
               title: roomName,
               roomID: el.id,
-              author: userName
+              author: userName,
+              pageState: new Page2State()
             }
           });
         });
@@ -156,7 +157,8 @@ class Page1 extends Component {
             appState: this.props.appState,
             title: roomName,
             roomID: room.id,
-            author: userName
+            author: userName,
+            pageState: new Page2State()
           }
         });
       }
@@ -183,12 +185,15 @@ class App extends React.Component {
 
   render() {
     return (
+      <div>
       <Navigator
         initialRoute={{component: Page1, props: {
           appState: this.props.appState
         }}}
         renderPage={this.renderPage}
       />
+      <DevTools />
+    </div>
     );
   }
 }
