@@ -59,6 +59,13 @@ const MessageBar = observer(({pageState, sendText}) => {
         height: '100%',
         alignItems: 'center'}}>
         <Input placeholder='Type Message'
+
+          onKeyPress={(event) => {
+            var code = event.keyCode || event.which;
+            if (code === 13) {
+              sendText();
+            }
+          }}
           onChange={({target}) => pageState.setText(target.value)}
           value={pageState.text}
           style={{
@@ -79,6 +86,7 @@ const MessageBar = observer(({pageState, sendText}) => {
 });
 
 const NewMessage = observer(({show, onClick}) => {
+
 
   if (show) {
     return (
