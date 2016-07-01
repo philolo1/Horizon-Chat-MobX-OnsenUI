@@ -1,52 +1,55 @@
 {
-  "name": "mobx-react-boilerplate",
-  "version": "1.0.0",
-  "description": "Boilerplate for MobX + React project with JSX, ES6 compilation and hot code reloading",
-  "scripts": {
-    "start": "node server.js",
-    "lint": "eslint src"
-  },
+  "name": "mobx-contact-list",
+  "version": "0.0.1",
+  "description": "MobX sample project",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mobxjs/mobx-react-boilerplate.git"
+    "url": "https://github.com/mweststrate/mobx-contact-list.git"
   },
-  "keywords": [
-    "react",
-    "reactjs",
-    "boilerplate",
-    "mobx",
-    "starter-kit"
-  ],
-  "author": "Michel Weststrate <mweststrate@gmail.com> (http://github.com/mweststrate)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mobxjs/mobx/issues"
+  "scripts": {
+    "start": "webpack-dev-server --config webpack-dev-server.config.js --progress --inline --colors",
+    "build": "webpack --config webpack-production.config.js --progress --colors"
   },
-  "homepage": "http://mobxjs.github.com/mobx",
+  "private": true,
   "devDependencies": {
-    "babel-core": "^6.9.1",
-    "babel-loader": "^6.2.4",
+    "babel-core": "^6.3.26",
+    "babel-eslint": "^5.0.0-beta6",
+    "babel-loader": "^6.2.0",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.5.0",
-    "babel-preset-stage-1": "^6.5.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-runtime": "^6.3.19",
+    "eslint": "^2.12.0",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-loader": "^1.1.1",
+    "eslint-plugin-import": "^1.8.1",
+    "eslint-plugin-jsx-a11y": "^1.4.2",
     "eslint-plugin-react": "^5.1.1",
-    "react-hot-loader": "^3.0.0-beta.2",
-    "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+    "eslint-plugin-standard": "^1.3.2",
+    "estraverse-fb": "^1.3.1",
+    "html-webpack-plugin": "^2.7.2",
+    "react-hot-loader": "^1.3.0",
+    "transfer-webpack-plugin": "^0.1.4",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
-    "css-loader": "^0.23.1",
     "file-loader": "^0.9.0",
+    "format-number-with-string": "0.0.2",
     "horizon": "^1.1.3",
-    "lodash": "^4.13.1",
-    "mobx": "^2.3.2",
-    "mobx-react": "^3.4.0",
+    "material-ui": "0.15.0-alpha.1",
+    "mobx": "^2.2.0",
+    "mobx-react": "^3.3.0",
     "mobx-react-devtools": "^4.2.0",
-    "onsenui": "^2.0.0-rc.14",
-    "react": "^15.1.0",
-    "react-dom": "^15.1.0",
+    "moment": "^2.13.0",
+    "node-uuid": "^1.4.7",
+    "onsenui": "^2.0.0-rc.15",
+    "react": "0.14.3",
+    "react-dom": "0.14.3",
+    "react-hot-loader": "^2.0.0-alpha-4",
     "react-onsenui": "^0.6.1",
-    "style-loader": "^0.13.1"
+    "react-tap-event-plugin": "^0.2.1",
+    "superagent": "^1.8.3"
   }
 }

@@ -1,21 +1,76 @@
 {
-  "ecmaFeatures": {
-    "jsx": true,
-    "modules": true
-  },
-  "env": {
-    "browser": true,
-    "node": true
-  },
   "parser": "babel-eslint",
-  "rules": {
-    "quotes": [2, "single"],
-    "strict": [2, "never"],
-    "react/jsx-uses-react": 2,
-    "react/jsx-uses-vars": 2,
-    "react/react-in-jsx-scope": 2
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "sourceType": "module"
   },
+
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+
   "plugins": [
-    "react"
-  ]
+    "standard",
+    "react",
+  ],
+
+  "globals": {
+    "document": false,
+    "navigator": false,
+    "window": false,
+    "CustomElements": false,
+    "require": false,
+    "module": false,
+  },
+
+  "extends": "airbnb",
+
+  "rules": {
+    /* rules that are to strict */
+    // disable prop-types
+    'react/prop-types': [0, { ignore: [], customValidators: [] }],
+    'arrow-body-style': [0, 'as-needed'],
+    'no-console': 0,
+    'no-var': 0,
+    'vars-on-top': 0,
+    'no-unused-vars': 0,
+    'prefer-const': 0,
+    'padded-blocks': 0,
+    'prefer-template': 0,
+    'global-require': 0,
+    'react/no-multi-comp': 0,
+    'react/sort-comp': 0,
+    'import/no-unresolved': [2, { ignore: ['image'], commonjs: true }],
+    'strict': 0,
+    'func-names': 0,
+    'object-shorthand': 0,
+    // 'comma-dangle' : 0,
+    'space-before-function-paren': 0,
+
+     // Only for viewing other projects
+    'prefer-arrow-callback': 0,
+    'no-param-reassign': 0,
+    'newline-per-chained-call': 0,
+    'max-len': 0,
+    'semi': 0,
+    'no-use-before-define': 0,
+    'no-return-assign': 0,
+    'react/prefer-stateless-function': 0,
+    'react/self-closing-comp': 0,
+    'react/jsx-first-prop-new-line': 0,
+    'react/jsx-no-undef': 2,
+    'jsx-a11y/img-has-alt': 0,
+    'new-cap': 0,
+
+    // prefer single instead of double
+    'jsx-quotes': [2, 'prefer-single'],
+    'object-curly-spacing': ["error", "never"],
+    'comma-dangle' : [2, 'never'],
+    'eq' : 0
+  }
 }
