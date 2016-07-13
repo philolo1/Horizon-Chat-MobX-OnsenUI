@@ -82,7 +82,11 @@ class Page1 extends Component {
           <Row style={{paddingBottom: 20}}>
             <Col />
             <Col>
-              <img style={{width: 200}} src={require('../www/onsen_chat.png')} />
+              <div style={{display: 'flex'}}>
+                <div style={{flex: 1}} />
+                <img style={{width: 200, height: 175}} src={require('../www/onsen_chat.png')} />
+                <div style={{flex: 1}} />
+              </div>
             </Col>
             <Col />
           </Row>

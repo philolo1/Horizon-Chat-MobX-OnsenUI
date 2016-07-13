@@ -15,7 +15,8 @@ const Message = observer(({data, author}) => {
     borderWidth: 1,
     borderRadius: 15,
     backgroundColor: 'white',
-    color: '#535050'
+    color: '#535050',
+    wordBreak: 'break-all'
   };
 
   let authorElement;
@@ -47,7 +48,8 @@ const Message = observer(({data, author}) => {
     borderWidth: 1,
     borderRadius: 15,
     backgroundColor: 'white',
-    color: '#535050'
+    color: '#535050',
+    wordBreak: 'break-all'
   };
 
 
