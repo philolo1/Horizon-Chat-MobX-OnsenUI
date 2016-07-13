@@ -18,10 +18,20 @@ const Message = observer(({data, author}) => {
     color: '#535050'
   };
 
+  let authorElement;
+
   if (author === data.author) {
+    authorElement = (
+      <div
+        style={{fontSize: 24 * 0.6, paddingLeft: 10, paddingBottom: 5, color: '#928585'}}
+      >
+        {data.author}
+      </div>
+    );
+
     return (
       <div style={{paddingTop: 10, paddingLeft: 14}}>
-        <div style={{fontSize: 24 * 0.6, paddingLeft: 10, paddingBottom: 5, color: '#928585'}}> {data.author} </div>
+        {data.showAuthor ? authorElement : null}
         <div style={{display: 'flex'}}>
           <div style={messageStyle}> {data.message} </div>
           <div style={{flex: 1, minWidth: '20%'}} />
@@ -40,9 +50,18 @@ const Message = observer(({data, author}) => {
     color: '#535050'
   };
 
+
+  authorElement = (
+    <div
+      style={{fontSize: 24 * 0.6, textAlign: 'right', paddingBottom: 5, paddingRight: 10, color: '#928585'}}
+    >
+      {data.author}
+    </div>
+  );
+
   return (
     <div style={{paddingTop: 10, paddingRight: 14}}>
-      <div style={{fontSize: 24 * 0.6, textAlign: 'right', paddingBottom: 5, paddingRight: 10, color: '#928585'}}> {data.author} </div>
+      {data.showAuthor ? authorElement : null}
       <div style={{display: 'flex'}}>
         <div style={{flex: 1, minWidth: '20%'}} />
         <div style={messageStyle}> {data.message} </div>
@@ -131,7 +150,8 @@ export default class Page2 extends Component {
 
     this.messages.findAll({roomID: this.props.roomID}).order('date').watch().subscribe((data) => {
       if (data) {
-        this.props.appState.setMessages(data);
+        const newData = _.sortBy(data, (el) => el.date);
+        this.props.appState.setMessages(newData);
         if (this.initial) {
           this.initial = false;
           this.scrollBottom();
@@ -174,7 +194,7 @@ export default class Page2 extends Component {
           </Toolbar>
         }
       >
-        {this.props.appState.messages.map((data) => {
+        {this.props.appState.messageList.map((data) => {
           return (
             <Message data={data} author={this.props.author} />
           );

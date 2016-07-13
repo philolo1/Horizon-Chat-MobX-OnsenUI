@@ -37,6 +37,23 @@ class AppState {
     this.chatRooms = [];
   }
 
+  @computed get messageList() {
+    var list = this.messages.map((el) => el);
+    for (var i = 1; i < list.length; i++) {
+      if (list[i - 1].author === list[i].author) {
+        list[i].showAuthor = false;
+      } else {
+        list[i].showAuthor = true;
+      }
+    }
+
+    if (list.length > 0) {
+      list[0].showAuthor = true;
+    }
+
+    return list;
+  }
+
   @computed get lastAuthor() {
     if (this.messages.length === 0) {
       return '';
