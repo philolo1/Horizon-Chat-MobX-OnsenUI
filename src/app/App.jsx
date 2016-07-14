@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
 import {observable} from 'mobx';
-import DevTools from 'mobx-react-devtools';
 import ons from 'onsenui';
 import {Modal, Page, Col, Row, BottomToolbar, List, ListItem, Button, Navigator, Toolbar, Input} from 'react-onsenui';
 import _ from 'lodash';
@@ -198,7 +197,6 @@ class App extends React.Component {
           }}}
           renderPage={this.renderPage}
         />
-        <DevTools />
       </div>
     );
   }

@@ -8,7 +8,6 @@ import Horizon from '@horizon/client';
 const horizon = Horizon();
 const appState = new AppState(horizon);
 
-
 horizon.onReady(() => {
   console.log('horizon is ready');
 

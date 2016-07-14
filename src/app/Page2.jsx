@@ -79,7 +79,7 @@ const MessageBar = observer(({pageState, sendText}) => {
       <div style={{display: 'flex',
         height: '100%',
         alignItems: 'center'}}>
-        <Input placeholder='Type Message'
+        <Input placeholder='Type'
 
           onKeyPress={(event) => {
             var code = event.keyCode || event.which;
