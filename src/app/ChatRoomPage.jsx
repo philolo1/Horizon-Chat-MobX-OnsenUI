@@ -10,9 +10,8 @@ const Message = observer(({data, author}) => {
 
   let messageStyle = {
     padding: 10,
-    borderColor: '#9E9E9E',
-    borderStyle: 'solid',
-    borderWidth: 1,
+    paddingLeft: 20,
+    paddingRight: 20,
     borderRadius: 15,
     backgroundColor: 'white',
     color: '#535050',
@@ -43,11 +42,10 @@ const Message = observer(({data, author}) => {
 
   messageStyle = {
     padding: 10,
-    borderColor: '#9E9E9E',
-    borderStyle: 'solid',
-    borderWidth: 1,
+    paddingLeft: 20,
+    paddingRight: 20,
     borderRadius: 15,
-    backgroundColor: 'white',
+    backgroundColor: '#8BDB3A',
     color: '#535050',
     wordBreak: 'break-all'
   };
@@ -117,7 +115,7 @@ const NewMessage = observer(({show, onClick}) => {
 });
 
 @observer
-export default class ChatRoomPag extends Component {
+export default class ChatRoomPage extends Component {
 
   componentDidUpdate() {
     if (this.props.appState.lastAuthor === this.props.author) {

@@ -75,6 +75,7 @@ class LoginPage extends Component {
   render() {
     return (
       <Page
+        id='page1'
         renderModal={this.renderModal}
       >
         <div style={{paddingLeft: 60, paddingRight: 60, paddingTop: 40}}>
@@ -206,6 +207,7 @@ const styles = {
   loginButton: {
     width: '100px',
     height: 30,
+    background: '#FF1A33',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
