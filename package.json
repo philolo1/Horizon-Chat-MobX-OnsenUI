@@ -7,8 +7,9 @@
     "url": "https://github.com/mweststrate/mobx-contact-list.git"
   },
   "scripts": {
-    "start": "webpack-dev-server --config webpack-dev-server.config.js --progress --inline --colors",
-    "build": "webpack --config webpack-production.config.js --progress --colors"
+    "start": "hz serve --dev --bind all",
+    "startdev": "webpack-dev-server --config webpack-dev-server.config.js --progress --inline --colors",
+    "builddev": "webpack --config webpack-production.config.js --progress --colors"
   },
   "private": true,
   "devDependencies": {
