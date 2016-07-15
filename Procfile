@@ -1,1 +1,1 @@
-web: hz serve --dev --bind all
+web: node index.js
