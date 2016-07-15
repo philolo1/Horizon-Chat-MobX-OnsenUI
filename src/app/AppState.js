@@ -10,7 +10,7 @@ class ChatRoom {
   }
 }
 
-export class Page2State {
+export class ChatRoomPageState {
   @observable text = '';
 
   @action setText(text) {
@@ -26,7 +26,7 @@ export class Page2State {
 class AppState {
   horizon;
   @observable userName;
-  @observable roomName;
+  @observable roomName = 'onsenui';
   @observable chatRooms = [];
   @observable loading = false;
   @observable messages = [];

@@ -79,7 +79,7 @@ const MessageBar = observer(({pageState, sendText}) => {
       <div style={{display: 'flex',
         height: '100%',
         alignItems: 'center'}}>
-        <Input placeholder='Type'
+        <Input placeholder='Type message'
 
           onKeyPress={(event) => {
             var code = event.keyCode || event.which;
@@ -107,8 +107,6 @@ const MessageBar = observer(({pageState, sendText}) => {
 });
 
 const NewMessage = observer(({show, onClick}) => {
-
-
   if (show) {
     return (
       <div onClick={onClick} style={{height: 40, position: 'fixed', bottom: 44, width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'lightgrey', color: '#616161'}}> new messages </div>
@@ -119,10 +117,9 @@ const NewMessage = observer(({show, onClick}) => {
 });
 
 @observer
-export default class Page2 extends Component {
+export default class ChatRoomPag extends Component {
 
   componentDidUpdate() {
-    console.log('mount', this.props.appState.lastAuthor);
     if (this.props.appState.lastAuthor === this.props.author) {
       this.scrollBottom();
     }
@@ -143,7 +140,6 @@ export default class Page2 extends Component {
   }
 
   get pageState() {
-    console.log('props', this.props);
     return this.props.pageState;
   }
 

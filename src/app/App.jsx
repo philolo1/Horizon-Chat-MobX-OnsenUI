@@ -4,8 +4,8 @@ import {observable} from 'mobx';
 import ons from 'onsenui';
 import {Modal, Page, Col, Row, BottomToolbar, List, ListItem, Button, Navigator, Toolbar, Input} from 'react-onsenui';
 import _ from 'lodash';
-import Page2 from './Page2.jsx';
-import {Page2State} from './AppState.js'
+import ChatRoomPage from './ChatRoomPage.jsx';
+import {ChatRoomPageState} from './AppState.js'
 
 const UserInput = observer(({appState}) => {
   return (
@@ -39,7 +39,7 @@ const RoomInput = observer(({appState}) => {
 
 
 @observer
-class Page1 extends Component {
+class LoginPage extends Component {
 
   constructor(props) {
     super(props);
@@ -141,13 +141,13 @@ class Page1 extends Component {
         }).subscribe((el) => {
 
           this.props.navigator.pushPage({
-            component: Page2,
+            component: ChatRoomPage,
             props: {
               appState: this.props.appState,
               title: roomName,
               roomID: el.id,
               author: userName,
-              pageState: new Page2State()
+              pageState: new ChatRoomPageState()
             }
           });
         });
@@ -157,13 +157,13 @@ class Page1 extends Component {
         console.log(room);
 
         this.props.navigator.pushPage({
-          component: Page2,
+          component: ChatRoomPage,
           props: {
             appState: this.props.appState,
             title: roomName,
             roomID: room.id,
             author: userName,
-            pageState: new Page2State()
+            pageState: new ChatRoomPageState()
           }
         });
       }
@@ -192,7 +192,7 @@ class App extends React.Component {
     return (
       <div>
         <Navigator
-          initialRoute={{component: Page1, props: {
+          initialRoute={{component: LoginPage, props: {
             appState: this.props.appState
           }}}
           renderPage={this.renderPage}
