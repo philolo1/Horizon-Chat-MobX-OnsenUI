@@ -4,7 +4,7 @@ import AppState from './AppState';
 import App from './App';
 import Horizon from '@horizon/client';
 
-const horizon = Horizon({host: '192.81.214.88:5000'});
+const horizon = Horizon({host: 'http://192.81.214.88:5000'});
 const appState = new AppState(horizon);
 
 horizon.onReady(() => {
