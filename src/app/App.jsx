@@ -205,7 +205,7 @@ class App extends React.Component {
 
 const styles = {
   loginButton: {
-    width: '100px',
+    width: '150px',
     height: 30,
     background: '#FF1A33',
     display: 'flex',

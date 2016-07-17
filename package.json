@@ -7,9 +7,8 @@
     "url": "https://github.com/mweststrate/mobx-contact-list.git"
   },
   "scripts": {
-    "start": "hz serve --dev --bind all",
-    "startdev": "webpack-dev-server --config webpack-dev-server.config.js --progress --inline --colors",
-    "builddev": "webpack --config webpack-production.config.js --progress --colors"
+    "start": "webpack-dev-server --config webpack-dev-server.config.js --progress --inline --colors",
+    "build": "webpack --config webpack-production.config.js --progress --colors"
   },
   "private": true,
   "devDependencies": {
@@ -33,7 +32,9 @@
     "react-hot-loader": "^1.3.0",
     "transfer-webpack-plugin": "^0.1.4",
     "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0"
+    "webpack-dev-server": "^1.14.0",
+    "ejs": "2.4.1",
+    "express": "4.13.3"
   },
   "dependencies": {
     "file-loader": "^0.9.0",
