@@ -20,7 +20,7 @@ const Message = observer(({data, author}) => {
 
   let authorElement;
 
-  if (author === data.author) {
+  if (author !== data.author) {
     authorElement = (
       <div
         style={{fontSize: 24 * 0.6, paddingLeft: 10, paddingBottom: 5, color: '#928585'}}
