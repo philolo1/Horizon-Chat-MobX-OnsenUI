@@ -30,7 +30,7 @@ const Message = observer(({data, author}) => {
     );
 
     return (
-      <div style={{paddingTop: 10, paddingLeft: 14}}>
+      <div style={{paddingTop: 10, paddingLeft: 14, borderColor: 'magenta', padding: 5, borderStyle: 'solid'}} >
         {data.showAuthor ? authorElement : null}
         <div style={{display: 'flex'}}>
           <div style={messageStyle}> {data.message} </div>
@@ -60,7 +60,7 @@ const Message = observer(({data, author}) => {
   );
 
   return (
-    <div style={{paddingTop: 10, paddingRight: 14}}>
+    <div style={{paddingTop: 10, paddingRight: 14, borderColor: 'magenta', padding: 5, borderStyle: 'solid'}}>
       {data.showAuthor ? authorElement : null}
       <div style={{display: 'flex'}}>
         <div style={{flex: 1, minWidth: '20%'}} />
@@ -73,7 +73,9 @@ const Message = observer(({data, author}) => {
 const MessageBar = observer(({pageState, sendText}) => {
 
   return (
-    <BottomToolbar>
+    <BottomToolbar
+      style={{border: 5, borderColor: 'red', borderStyle: 'solid'}}
+    >
       <div style={{display: 'flex',
         height: '100%',
         alignItems: 'center'}}>
@@ -175,6 +177,7 @@ export default class ChatRoomPage extends Component {
   render() {
     return (
       <Page
+        style={{border: 5, borderColor: 'orange', borderStyle: 'solid'}}
         id='page2'
         renderBottomToolbar={() =>
           <MessageBar
@@ -184,7 +187,9 @@ export default class ChatRoomPage extends Component {
           />
         }
         renderToolbar={() =>
-          <Toolbar>
+          <Toolbar
+            style={{border: 5, borderColor: 'blue', borderStyle: 'solid'}}
+          >
             <div className='left'><BackButton>Back</BackButton></div>
             <div className='center'> {this.props.title} </div>
           </Toolbar>

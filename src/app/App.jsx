@@ -9,10 +9,12 @@ import {ChatRoomPageState} from './AppState.js'
 
 const UserInput = observer(({appState}) => {
   return (
-    <div>
+    <div
+      style={{border: 5, marginTop: 5, borderColor: 'magenta', borderStyle: 'solid'}}
+    >
       <Input
         modifier='underbar'
-        style={{width: '100%'}}
+        style={{width: '100%', paddingLeft: 5}}
         onChange={(e) => appState.userName = e.target.value}
         value={appState.userName}
         placeholder='Name'
@@ -24,11 +26,14 @@ const UserInput = observer(({appState}) => {
 
 const RoomInput = observer(({appState}) => {
   return (
-    <div style={{paddingTop: 10, paddingBottom: 10}}>
+    <div style={{
+      marginTop: 5,
+      border: 5, borderColor: 'green', borderStyle: 'solid'
+    }}>
       <Input
         modifier='underbar'
         fload
-        style={{width: '100%'}}
+        style={{width: '100%', paddingLeft: 5}}
         placeholder='Room'
         onChange={(e) => appState.roomName = e.target.value}
         value={appState.roomName}
@@ -76,12 +81,17 @@ class LoginPage extends Component {
     return (
       <Page
         id='page1'
+        style={{border: 5, borderColor: 'orange', borderStyle: 'solid'}}
         renderModal={this.renderModal}
       >
         <div style={{paddingLeft: 60, paddingRight: 60, paddingTop: 40}}>
-          <Row style={{paddingBottom: 20}}>
+          <Row style={{paddingBottom: 20,
+            border: 5, borderColor: 'blue', borderStyle: 'solid'
+          }}>
             <Col />
-            <Col>
+            <Col style={{
+
+            }}>
               <div style={{display: 'flex'}}>
                 <div style={{flex: 1}} />
                 <img style={{width: 200, height: 175}} src={require('../www/onsen_chat.png')} />
@@ -94,7 +104,8 @@ class LoginPage extends Component {
           <RoomInput appState={this.props.appState} />
           <div style={{display: 'flex', justifyContent: 'center'}}>
 
-            <Row style={{paddingBottom: 20}}>
+            <Row style={{paddingBottom: 20, marginTop: 5, border: 5, borderColor: 'brown', borderStyle: 'solid'
+            }}>
               <Col />
               <Col style={{display: 'flex', justifyContent: 'center'}}>
                 <Button onClick={this.joinRoom} modifier='large' style={styles.loginButton}> Join </Button>
@@ -212,7 +223,7 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     fontSize: 15,
-    marginTop: 10
+    marginTop: 20
   }
 };
 
