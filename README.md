@@ -1,4 +1,6 @@
 Real time Chat App with OnsenUI and Horizon!
-=====================
 
-This is a blog post originally from https://onsen.io/blog/.
+====== 
+
+This post is originally from : http://tutorials.pluralsight.com/html-css/real-time-chat-app-with-onsenui-and-horizon
+
